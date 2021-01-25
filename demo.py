@@ -58,8 +58,11 @@ for i in a:
         if fork < 5:
             tmp += newparagraph()
         else:
-            tmp += text[random.randint(0,len(text) - 1)]
+            new_sentance = text[random.randint(0,len(text) - 1)]
+            if '啵啵' in new_sentance:
+                new_sentance = new_sentance.replace('啵啵', snh_saying[random.randint(0, len(snh_saying) - 1)])
+            tmp += new_sentance
+
     tmp = tmp.replace("a",a)
     tmp = tmp.replace("b",b)
-    tmp = tmp.replace("啵啵", snh_saying[random.randint(0, len(snh_saying) - 1)])
     print(tmp)
